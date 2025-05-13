@@ -1,3 +1,11 @@
-notebooks/data
-notebooks/cifar_net.pth
+**/__pycache__/
+examples/out
 .ipynb_checkpoints/
+NOTES.*
+OLD.*
+*.h5
+*.hdf5
+*.ckpt
+*.pt
+*.pth
+*.onnx
