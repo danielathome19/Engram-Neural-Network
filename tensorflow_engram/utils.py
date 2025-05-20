@@ -3,6 +3,7 @@ import numpy as np
 import seaborn as sns
 import tensorflow as tf
 import matplotlib.pyplot as plt
+from keras import callbacks
 from datetime import datetime
 from tensorflow_engram.models import EngramNetwork
 
@@ -53,7 +54,7 @@ def plot_hebbian_trace(trace_callback, file_path=None):
     pass
 
 
-class HebbianTraceMonitor(tf.keras.callbacks.Callback):
+class HebbianTraceMonitor(callbacks.Callback):
     """Callback for monitoring and visualizing Hebbian traces during training.
     
     This callback runs a batch of data through the model after each epoch
@@ -117,7 +118,7 @@ class HebbianTraceMonitor(tf.keras.callbacks.Callback):
     def _find_rnn_layer(self):
         """Find the RNN layer that contains the EngramCell."""
         for layer in self.model.layers:
-            # if isinstance(layer, tf.keras.layers.RNN):
+            # if isinstance(layer, layers.RNN):
             #     if hasattr(layer.cell, 'hebbian_lr'):
             #         return layer
             if isinstance(layer, EngramNetwork):

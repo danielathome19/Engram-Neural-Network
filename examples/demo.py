@@ -1,12 +1,13 @@
 import os, sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import keras
 import numpy as np
 import pandas as pd
 import seaborn as sns
 import tensorflow as tf
 import matplotlib.pyplot as plt
-from tensorflow.keras.datasets import mnist
-from tensorflow.keras.utils import to_categorical, plot_model
+from keras.datasets import mnist
+from keras.utils import to_categorical, plot_model
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.metrics import classification_report, confusion_matrix
@@ -57,14 +58,14 @@ mnist_model = engram_classifier(
 )
 
 # Create an early stopping callback to prevent overfitting
-early_stopping = tf.keras.callbacks.EarlyStopping(
+early_stopping = keras.callbacks.EarlyStopping(
     monitor='val_loss',
     patience=3,
     restore_best_weights=True
 )
 
 # Reduce learning rate when plateauing
-lr_scheduler = tf.keras.callbacks.ReduceLROnPlateau(
+lr_scheduler = keras.callbacks.ReduceLROnPlateau(
     monitor='val_loss',
     factor=0.5,
     patience=2,
@@ -75,14 +76,14 @@ lr_scheduler = tf.keras.callbacks.ReduceLROnPlateau(
 trace_callback = HebbianTraceMonitor(x_train[:32], log_dir="examples/out/hebbian_trace", verbose=1)
 
 mnist_model.compile(
-    optimizer=tf.keras.optimizers.Adam(learning_rate=0.001, clipnorm=1.0),
+    optimizer=keras.optimizers.Adam(learning_rate=0.001, clipnorm=1.0),
     loss='categorical_crossentropy',
     metrics=['accuracy']
 )
 mnist_model.summary()
 plot_model(mnist_model, to_file='examples/out/mnist_model.png', show_shapes=True, show_layer_names=True, expand_nested=True)
 
-# mnist_model = tf.keras.models.load_model('examples/out/mnist_model.h5', custom_objects={'HebbianTraceMonitor': HebbianTraceMonitor, 'Engram': Engram})
+# mnist_model = keras.models.load_model('examples/out/mnist_model.h5', custom_objects={'HebbianTraceMonitor': HebbianTraceMonitor, 'Engram': Engram})
 
 history = mnist_model.fit(
     x_train, y_train,

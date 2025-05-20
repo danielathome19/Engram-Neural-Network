@@ -1,8 +1,8 @@
 import tensorflow as tf
 import tensorflow_engram
-from tensorflow.keras import layers
+from keras import layers, activations, initializers
 
-class EngramCell(tf.keras.layers.Layer):
+class EngramCell(layers.Layer):
     """Biologically-inspired RNN cell with Hebbian learning and memory trace.
     
     This cell implements engram-like memory formation using both gradient-based
@@ -86,7 +86,7 @@ class EngramCell(tf.keras.layers.Layer):
         # Initial hebbian trace for state setup
         self.initial_hebbian_trace = self.add_weight(
             shape=(self.memory_size, self.hidden_dim),
-            initializer=tf.keras.initializers.RandomUniform(minval=-0.01, maxval=0.01),
+            initializer=initializers.RandomUniform(minval=-0.01, maxval=0.01),
             trainable=False,
             name="initial_hebbian_trace"
         )
@@ -204,7 +204,7 @@ class EngramAttentionLayer(layers.Layer):
     def call(self, inputs):
         # Compute attention weights
         attention_weights = self.attention_dense(inputs)  # [batch, time_steps, 1]
-        attention_weights = tf.keras.activations.softmax(attention_weights, axis=1)
+        attention_weights = activations.softmax(attention_weights, axis=1)
         
         # Apply attention weights to input
         context_vector = tf.reduce_sum(inputs * attention_weights, axis=1)

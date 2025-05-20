@@ -1,9 +1,9 @@
 import tensorflow as tf
-from tensorflow.keras import layers
+from keras import layers, Model, Sequential
 from tensorflow_engram.layers import EngramCell, EngramAttentionLayer, Engram
 
 
-class EngramNetwork(tf.keras.Model):
+class EngramNetwork(Model):
     """Ready-to-use Hebbian Engram Network for sequence modeling tasks.
     
     This model wraps the HebbianEngramCell with common configurations for
@@ -149,7 +149,7 @@ def engram_classifier(input_shape, num_classes, hidden_dim=128, memory_size=64, 
     )
     
     # Wrap the EngramNetwork to handle multiple outputs if return_states=True
-    model = tf.keras.Sequential([
+    model = Sequential([
         layers.InputLayer(input_shape=input_shape),
         Engram(engram_network, return_states=return_states),
         layers.Dropout(0.3),
@@ -175,7 +175,7 @@ def engram_regression(input_shape, output_dim, hidden_dim=128, memory_size=64, r
     Returns:
         A compiled Keras model ready for training
     """
-    model = tf.keras.Sequential([
+    model = Sequential([
         layers.InputLayer(input_shape=input_shape),
         EngramNetwork(
             hidden_dim=hidden_dim,
