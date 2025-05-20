@@ -66,6 +66,7 @@ class HebbianTraceMonitor(callbacks.Callback):
         save_freq: Save visualizations every N epochs (default: 5)
         verbose: Verbosity level (0=silent, 1=basic stats, 2=detailed)
         plot_every: Generate plots every N epochs (default: 5)
+        skip_first_plot: Skip plotting for epoch 0 (default: False)
     """
     
     def __init__(self, 
@@ -73,7 +74,8 @@ class HebbianTraceMonitor(callbacks.Callback):
                  log_dir=None, 
                  save_freq=5,
                  verbose=1, 
-                 plot_every=5):
+                 plot_every=5,
+                 skip_first_plot=False):
         super().__init__()
         self.sample_batch = sample_batch
         self.log_dir = log_dir
@@ -82,6 +84,7 @@ class HebbianTraceMonitor(callbacks.Callback):
         self.save_freq = save_freq
         self.verbose = verbose
         self.plot_every = plot_every
+        self.skip_first_plot = skip_first_plot
         self.traces = []
         self.attention_weights = []
         self.stats = {
@@ -182,7 +185,7 @@ class HebbianTraceMonitor(callbacks.Callback):
                       f"sparsity: {self.stats['sparsity'][-1]:.2%}")
                       
             # Generate plots periodically
-            if epoch % self.plot_every == 0:
+            if epoch % self.plot_every == 0 and (epoch > 0 or not self.skip_first_plot):
                 self.plot_trace_evolution(epoch)
                 
             # Save plots to disk if requested
