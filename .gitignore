@@ -1,5 +1,6 @@
 **/__pycache__/
 examples/out
+examples/images
 .ipynb_checkpoints/
 NOTES.*
 OLD.*
