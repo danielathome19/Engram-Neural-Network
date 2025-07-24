@@ -121,7 +121,7 @@ class EngramNetwork(Model):
         return {**base_config, **config}
 
 
-def engram_classifier(input_shape, num_classes, hidden_dim=128, memory_size=64, return_states=False, reset_states_per_batch=True,  sparsity_strength=0.1, **kwargs):
+def engram_classifier(input_shape, num_classes, hidden_dim=128, memory_size=64, return_states=False, reset_states_per_batch=True,  return_sequences=False, use_attention=True, sparsity_strength=0.1, **kwargs):
     """Creates a classification model using Engram Network.
     
     Args:
@@ -140,8 +140,8 @@ def engram_classifier(input_shape, num_classes, hidden_dim=128, memory_size=64, 
     engram_network = EngramNetwork(
         hidden_dim=hidden_dim,
         memory_size=memory_size,
-        return_sequences=False,
-        use_attention=True,
+        return_sequences=return_sequences,
+        use_attention=use_attention,
         return_states=return_states,
         reset_states_per_batch=reset_states_per_batch,
         sparsity_strength=sparsity_strength,
@@ -153,7 +153,8 @@ def engram_classifier(input_shape, num_classes, hidden_dim=128, memory_size=64, 
         layers.InputLayer(input_shape=input_shape),
         Engram(engram_network, return_states=return_states),
         layers.Dropout(0.3),
-        layers.Dense(num_classes, activation='softmax')
+        layers.Dense(num_classes, activation='softmax') if not return_sequences else \
+        layers.TimeDistributed(layers.Dense(num_classes, activation='softmax'))
     ])
 
     return model
