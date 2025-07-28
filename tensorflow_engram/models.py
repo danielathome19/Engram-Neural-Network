@@ -121,9 +121,9 @@ class EngramNetwork(Model):
         return {**base_config, **config}
 
 
-def engram_classifier(input_shape, num_classes, hidden_dim=128, memory_size=64, return_states=False, reset_states_per_batch=True,  return_sequences=False, use_attention=True, sparsity_strength=0.1, **kwargs):
+def EngramClassifier(input_shape, num_classes, hidden_dim=128, memory_size=64, return_states=False, reset_states_per_batch=True,  return_sequences=False, use_attention=True, sparsity_strength=0.1, **kwargs):
     """Creates a classification model using Engram Network.
-    
+
     Args:
         input_shape: Shape of input sequences (timesteps, features)
         num_classes: Number of output classes
@@ -133,7 +133,7 @@ def engram_classifier(input_shape, num_classes, hidden_dim=128, memory_size=64, 
         reset_states_per_batch: Whether to reset states at the beginning of each batch
         sparsity_strength: Strength of (L1) sparsity regularization on attention weights (0-1)
         **kwargs: Additional arguments to pass to EngramNetwork
-        
+
     Returns:
         A compiled Keras model ready for training
     """
@@ -147,7 +147,7 @@ def engram_classifier(input_shape, num_classes, hidden_dim=128, memory_size=64, 
         sparsity_strength=sparsity_strength,
         **kwargs
     )
-    
+
     # Wrap the EngramNetwork to handle multiple outputs if return_states=True
     model = Sequential([
         layers.InputLayer(input_shape=input_shape),
@@ -160,7 +160,7 @@ def engram_classifier(input_shape, num_classes, hidden_dim=128, memory_size=64, 
     return model
 
 
-def engram_regression(input_shape, output_dim, hidden_dim=128, memory_size=64, return_states=False, reset_states_per_batch=True, sparsity_strength=0.1, **kwargs):
+def EngramRegressor(input_shape, output_dim, hidden_dim=128, memory_size=64, return_states=False, reset_states_per_batch=True, sparsity_strength=0.1, **kwargs):
     """Creates a regression model using Engram Network.
     
     Args:
