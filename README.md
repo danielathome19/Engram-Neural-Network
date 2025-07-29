@@ -19,7 +19,7 @@ _Add Hebbian/engram learning to your neural networks with just a few lines of co
 
 ## Overview
 
-**tensorflow-engram** provides Keras layers, models, and utilities for building neural networks with biologically-inspired memory mechanisms, including Hebbian plasticity, engram-like trace formation, attention, and sparse memory recall. 
+`tensorflow-engram` provides Keras layers, models, and utilities for building neural networks with biologically-inspired memory mechanisms, including Hebbian plasticity, engram-like trace formation, attention, and sparse memory recall. 
 This enables powerful sequence modeling, few-shot learning, continual learning, and analysis of memory traces within modern deep learning pipelines.
 
 - **Seamless TensorFlow/Keras integration**
