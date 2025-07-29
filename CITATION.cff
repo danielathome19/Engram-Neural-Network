@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Szelogowski"
+  given-names: "Daniel"
+  orcid: "https://orcid.org/0000-0002-0350-5771"
+title: "tensorflow-engram: A Python package for adding biologically-inspired Hebbian memory and engram layers to TensorFlow/Keras models, supporting memory traces, plasticity, attention, and sparsity for neural sequence learning."
+type: software
+version: 0.1.0
+doi: 10.48550/arxiv.TBD
+license: BSD-3-Clause
+license-url: "https://github.com/danielathome19/Engram-Neural-Network/blob/main/LICENSE.md"
+date-released: 2025-05-01
+url: "https://github.com/danielathome19/Engram-Neural-Network"
