@@ -86,7 +86,7 @@ x_train, x_val, y_train, y_val = train_test_split(x_train, y_train, test_size=0.
 
 # Build model
 model = EngramClassifier(
-    input_shape=(28, 28),    # sequence length, features
+    input_shape=(28, 28),
     num_classes=10,
     hidden_dim=128,
     memory_size=64,
