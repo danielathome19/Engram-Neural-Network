@@ -71,7 +71,7 @@ import numpy as np
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
-from tensorflow_engram.models import engram_classifier
+from tensorflow_engram.models import EngramClassifier
 from tensorflow_engram.utils import HebbianTraceMonitor, plot_hebbian_trace
 
 # Prepare data
@@ -85,7 +85,7 @@ x_test  = x_test.reshape(-1, 28, 28)
 x_train, x_val, y_train, y_val = train_test_split(x_train, y_train, test_size=0.1)
 
 # Build model
-model = engram_classifier(
+model = EngramClassifier(
     input_shape=(28, 28),    # sequence length, features
     num_classes=10,
     hidden_dim=128,

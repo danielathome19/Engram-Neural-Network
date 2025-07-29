@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.metrics import classification_report, confusion_matrix
 from tensorflow_engram.layers import Engram
-from tensorflow_engram.models import engram_classifier
+from tensorflow_engram.models import EngramClassifier
 from tensorflow_engram.utils import HebbianTraceMonitor, plot_hebbian_trace
 
 import warnings
@@ -48,7 +48,7 @@ print(f"Validation data shape: {x_val.shape}")
 print(f"Test data shape: {x_test.shape}")
 
 # Create the MNIST classifier
-mnist_model = engram_classifier(
+mnist_model = EngramClassifier(
     input_shape=(28, 28), # 28 time steps, each with 28 features
     hidden_dim=128,
     memory_size=64,  # Increased memory size
