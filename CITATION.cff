@@ -4,7 +4,7 @@ authors:
 - family-names: "Szelogowski"
   given-names: "Daniel"
   orcid: "https://orcid.org/0000-0002-0350-5771"
-title: "tensorflow-engram: A Python package for adding biologically-inspired Hebbian memory and engram layers to TensorFlow/Keras models, supporting memory traces, plasticity, attention, and sparsity for neural sequence learning."
+title: "tensorflow-engram: A Python package for Engram Neural Networks, adding biologically-inspired Hebbian memory and engram layers to TensorFlow/Keras models, supporting memory traces, plasticity, attention, and sparsity for neural sequence learning."
 type: software
 version: 0.1.0
 doi: 10.48550/arxiv.TBD

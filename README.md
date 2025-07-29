@@ -211,7 +211,7 @@ If you use this code for your research, please cite this project as:
  doi = {10.48550/arxiv.TBD},
  license = {BSD-3-Clause},
  month = {jul},
- title = {{tensorflow-engram (Engram Neural Networks): A Python package for adding biologically-inspired Hebbian memory and engram layers to TensorFlow/Keras models, supporting memory traces, plasticity, attention, and sparsity for neural sequence learning.}},
+ title = {{tensorflow-engram: A Python package for Engram Neural Networks, adding biologically-inspired Hebbian memory and engram layers to TensorFlow/Keras models, supporting memory traces, plasticity, attention, and sparsity for neural sequence learning.}},
  url = {https://github.com/danielathome19/Engram-Neural-Network},
  version = {0.1.0},
  year = {2025}

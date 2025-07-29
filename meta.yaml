@@ -18,4 +18,4 @@ requirements:
 about:
   home: https://github.com/danielathome19/Engram-Neural-Network
   license: BSD-3-Clause
-  summary: A Python package for adding biologically-inspired Hebbian memory and engram layers to TensorFlow/Keras models, supporting memory traces, plasticity, attention, and sparsity for neural sequence learning.
+  summary: A Python package for Engram Neural Networks, adding biologically-inspired Hebbian memory and engram layers to TensorFlow/Keras models, supporting memory traces, plasticity, attention, and sparsity for neural sequence learning.

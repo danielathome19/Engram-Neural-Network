@@ -6,7 +6,7 @@ setup(
     version='0.1.0',
     packages=find_packages(),
     author='Daniel Szelogowski',
-    description='A Python package for adding biologically-inspired Hebbian memory and engram layers to TensorFlow/Keras models, supporting memory traces, plasticity, attention, and sparsity for neural sequence learning.',
+    description='A Python package for Engram Neural Networks, adding biologically-inspired Hebbian memory and engram layers to TensorFlow/Keras models, supporting memory traces, plasticity, attention, and sparsity for neural sequence learning.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     url='https://danielathome19.github.io/Engram-Neural-Network',
