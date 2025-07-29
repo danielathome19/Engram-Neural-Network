@@ -160,7 +160,7 @@ def EngramClassifier(input_shape, num_classes, hidden_dim=128, memory_size=64, r
     return model
 
 
-def EngramRegressor(input_shape, output_dim, hidden_dim=128, memory_size=64, return_states=False, reset_states_per_batch=True, sparsity_strength=0.1, **kwargs):
+def EngramRegressor(input_shape, output_dim, hidden_dim=128, memory_size=64, return_states=False, return_sequences=True, reset_states_per_batch=True, sparsity_strength=0.1, **kwargs):
     """Creates a regression model using Engram Network.
     
     Args:
@@ -181,13 +181,14 @@ def EngramRegressor(input_shape, output_dim, hidden_dim=128, memory_size=64, ret
         EngramNetwork(
             hidden_dim=hidden_dim,
             memory_size=memory_size,
-            return_sequences=True,
+            return_sequences=return_sequences,
             return_states=return_states,
             reset_states_per_batch=reset_states_per_batch,
             sparsity_strength=sparsity_strength,
             **kwargs
         ),
-        layers.TimeDistributed(layers.Dense(output_dim))
+        layers.TimeDistributed(layers.Dense(output_dim)) if return_sequences else \
+        layers.Dense(output_dim)
     ])
     
     return model
