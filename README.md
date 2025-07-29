@@ -10,7 +10,9 @@ https://anaconda.org/danielathome19/tensorflow-engram)
 
 
 
-**Hebbian Memory-Augmented Recurrent Networks (Engram Neural Networks/ENNs): biologically-inspired memory for TensorFlow/Keras.**  
+### Hebbian Memory-Augmented Recurrent Networks: Engram Neural Networks (ENNs)
+**Biologically-inspired memory for TensorFlow/Keras.**
+
 _Add Hebbian/engram learning to your neural networks with just a few lines of code._
 
 ---
