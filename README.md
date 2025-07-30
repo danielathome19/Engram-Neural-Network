@@ -6,7 +6,7 @@ https://pypi.org/project/tensorflow-engram/)
 https://anaconda.org/danielathome19/tensorflow-engram)
 [![CI/CT/CD](https://github.com/danielathome19/Engram-Neural-Network/actions/workflows/package_upload.yml/badge.svg)](https://github.com/danielathome19/Engram-Neural-Network/actions/workflows/package_upload.yml)
 [![License](https://img.shields.io/badge/license-BSD_3_Clause-blue)](./LICENSE.md)
-[![DOI](https://zenodo.org/badge/DOI/10.48550/arXiv.2507.21474.svg)](https://doi.org/10.48550/10.48550/arXiv.2507.21474)
+[![DOI](https://zenodo.org/badge/DOI/10.48550/arXiv.2507.21474.svg)](https://doi.org/10.48550/arXiv.2507.21474)
 
 
 
