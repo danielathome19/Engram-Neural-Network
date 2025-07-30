@@ -6,7 +6,7 @@ https://pypi.org/project/tensorflow-engram/)
 https://anaconda.org/danielathome19/tensorflow-engram)
 [![CI/CT/CD](https://github.com/danielathome19/Engram-Neural-Network/actions/workflows/package_upload.yml/badge.svg)](https://github.com/danielathome19/Engram-Neural-Network/actions/workflows/package_upload.yml)
 [![License](https://img.shields.io/badge/license-BSD_3_Clause-blue)](./LICENSE.md)
-[![DOI](https://zenodo.org/badge/DOI/10.48550/arxiv.TBD.svg)](https://doi.org/10.48550/arxiv.TBD)
+[![DOI](https://zenodo.org/badge/DOI/10.48550/arXiv.2507.21474.svg)](https://doi.org/10.48550/10.48550/arXiv.2507.21474)
 
 
 
@@ -210,7 +210,7 @@ If you use this code for your research, please cite this project as:
 ```bibtex
 @software{Szelogowski_tensorflow_engram_2025,
  author = {Szelogowski, Daniel},
- doi = {10.48550/arxiv.TBD},
+ doi = {10.48550/arXiv.2507.21474},
  license = {BSD-3-Clause},
  month = {jul},
  title = {{tensorflow-engram: A Python package for Engram Neural Networks, adding biologically-inspired Hebbian memory and engram layers to TensorFlow/Keras models, supporting memory traces, plasticity, attention, and sparsity for neural sequence learning.}},
@@ -225,7 +225,7 @@ or as the corresponding research paper:
 ```bibtex
 @misc{Szelogowski_Simulation_of_Neural_Responses_Using_OI_2024,
  author = {Szelogowski, Daniel},
- doi = {10.48550/arxiv.TBD},
+ doi = {10.48550/arXiv.2507.21474},
  month = {jul},
  title = {{Hebbian Memory-Augmented Recurrent Networks: Engram Neurons in Deep Learning}},
  url = {https://github.com/danielathome19/Engram-Neural-Network},
