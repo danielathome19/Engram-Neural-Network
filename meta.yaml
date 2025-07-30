@@ -10,12 +10,12 @@ build:
 
 requirements:
   build:
-    - python
+    - python >=3.12,<3.13
     - pip
     - setuptools
   run:
-    - python
-    - tensorflow
+    - python >=3.12,<3.13
+    - tensorflow >=2.19
     - keras
 
 about:
