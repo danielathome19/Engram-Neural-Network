@@ -76,7 +76,7 @@ jobs:
       with:
         auto-update-conda: true
         miniforge-variant: Mambaforge
-        python-version: 3.8
+        python-version: 3.12
 
     - name: Install conda-build and anaconda-client
       if: steps.conda_version_check.outputs.exists == 'false'
