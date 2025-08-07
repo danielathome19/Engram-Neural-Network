@@ -15,10 +15,5 @@ setup(
         'Source': 'https://github.com/danielathome19/Engram-Neural-Network',
         'Tracker': 'https://github.com/danielathome19/Engram-Neural-Network/issues',
     },
-    classifiers=[
-        'Programming Language :: Python :: 3',
-        'License :: OSI Approved :: BSD-3-Clause License',
-        'Operating System :: OS Independent',
-    ],
     python_requires='>=3.12',
 )
