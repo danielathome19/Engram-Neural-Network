@@ -37,8 +37,8 @@ jobs:
         pip install requests
         PACKAGE_NAME="tensorflow-engram"
         VERSION=$(python setup.py --version)
-        response=$(curl -s -o /dev/null -w "%{http_code}" https://pypi.org/project/$PACKAGE_NAME/$VERSION/)
-        if [ $response -eq 200 ]; then
+        json=$(curl -s https://pypi.org/pypi/$PACKAGE_NAME/json)
+        if echo "$json" | grep -q "\"$VERSION\":"; then
           echo "Version $VERSION already exists on PyPI."
           echo "::set-output name=exists::true"
         else
